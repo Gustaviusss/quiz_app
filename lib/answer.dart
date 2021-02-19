@@ -7,14 +7,23 @@ class Answer extends StatelessWidget {
   Answer(this.selectHandler, this.answerText);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      child: RaisedButton(
-              color:Colors.blue,
-              textColor: Colors.white,
-              child: Text(answerText),
-              onPressed: selectHandler,
-      )
+    return GestureDetector(
+      onTap: selectHandler,
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20), color: Colors.blue),
+        margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+        width: double.infinity,
+        height: 50,
+        child: Center(
+          child: Text(answerText,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontFamily: "Roboto",
+                  fontStyle: FontStyle.normal)),
+        ),
+      ),
     );
   }
 }
